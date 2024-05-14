@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.card-secundario:hover {
+    box-shadow: 0 0 20px rgba(223, 208, 142, 0.808);
+    /* Añade una sombra sutil */
+    transform: translateY(-7px);
+    /* Mueve ligeramente el elemento hacia arriba */
+    transition: all 0.3s ease;
+    /* Agrega una transición suave */
+}
+
+
+
+.fila {
+    margin-top: 15px !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.card-secundario {
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #fff1e2bb !important;
+
+}
+
+.card-tercero h5 {
+    font-size: 20px;
+    color: #c79869;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: bolder;
+    user-select: none;
+}
+
+.card-tercero a,
+p {
+    border-color: #c79869;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 15px;
+    color: #c79869;
+    text-align: center;
+}
+
+img {
+
+    height: 225px !important;
+}
+
+.card-tercero a:hover {
+    border-color: #c79869;
+    color: #fff;
+    background-color: #c79869;
+    transition: all 0.2s ease;
+}
+
+.card-tercero {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.paginas .pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.paginas{
+    background-color: #fff ;
+}
+
+.paginas .page-link {
+    color: #b38557; /* Color del texto */
+    background-color: transparent; /* Fondo transparente */
+    border: 1px solid #c79869; /* Borde */
+    padding: 5px 10px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+.paginas .page-link:hover {
+    color: #fff; /* Cambio de color de texto al pasar el cursor */
+    background-color: #b38557; /* Cambio de fondo al pasar el cursor */
+}
+
+.paginas .page-item.active .page-link {
+    background-color: #b38557; /* Color de fondo */
+    border-color: #b38557; /* Color del borde */
+}
+a{
+  
+}
+
+@media only screen and (max-width: 600px) {
+    .paginas .pagination {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .paginas .page-item {
+        margin: 2px 0;
+    }
+}

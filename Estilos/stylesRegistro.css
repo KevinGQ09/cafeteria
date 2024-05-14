@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../imagenes/fondoLogin.jpg") no-repeat center center/cover;
+}
+
+.contenedor-principal {
+    max-width: 650px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #cab49dd0;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-family: 'Viga', sans-serif;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.btn-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.btn-submit button {
+    background-color: #c7a17a;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+
+}
+
+.btn-submit button:hover {
+    background-color: #ffffff;
+    color: #c7a17a;
+}
+
+.imagen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.span-color {
+    background-color: #c7a17a;
+    color: white;
+}
+
+.fila-contra{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.group-success{
+    background-color: rgb(151, 236, 22);
+    color: white;
+}
+
+.group-danger{
+    background-color: red;
+    color: white;
+}

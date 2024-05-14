@@ -1,0 +1,3 @@
+<?php 
+$rutaRaiz = "/Proyecto/";
+?>

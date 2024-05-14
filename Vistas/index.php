@@ -1,7 +1,3 @@
-<?php
-include "../Config/Global.php";
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +24,69 @@ include "../Config/Global.php";
 </head>
 
 <body>
-<?php include 'Head.php'?>
+   <!--Primer Navar-->
+   <header>
+      <div class="container-fluid contenedor">
+         <div class="contactos">
+            <i class="bi bi-headset"></i>
+            <div class="texto-telefono">
+               <span class="texto">Servicio a Cliente</span>
+               <span class="telefono">123-456-7890</span>
+            </div>
+         </div>
+
+         <div class="cafeteria">
+            <i class="bi bi-cup-hot-fill"></i>
+            <h1>Cafeteria</h1>
+         </div>
+
+         <div class="iniciar-registro">
+
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               <i class="bi bi-person-circle"></i>
+            </a>
+
+            <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="Login.php">Iniciar Sesion</a></li>
+               <li><a class="dropdown-item" href="#">Registro</a></li>
+            </ul>
+
+         </div>
+      </div>
+
+
+      <!--Segundo Navar-->
+
+      <nav class="navbar navbar-expand-md justify-content-around">
+         <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex text-center ">
+                  <li class="nav-item">
+                     <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link active" aria-current="page" href="Categorias.php">Categorias</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link active" aria-current="page" href="Productos.php">Productos</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link active" aria-current="page" href="Login.php">Carrito</a>
+                  </li>
+               </ul>
+               <form class="d-flex" role="search">
+                  <input class="form-control me-2 " type="search" placeholder="Buscar" aria-label="Search">
+                  <button class="btn boton-buscar" type="submit"><i class="bi bi-search color-icono"></i></button>
+               </form>
+            </div>
+         </div>
+      </nav>
+   </header>
 
    <!--Primer Seccion-->
 

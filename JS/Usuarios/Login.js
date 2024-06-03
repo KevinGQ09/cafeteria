@@ -14,15 +14,23 @@ $(document).ready(function () {
             url: rutaRaiz + "PHP/usuarios/login-usuarios.php",
             data: datos,
             success: function (response) {
-             if (!response.error) {
-               let respuesta = JSON.parse(response);
-               if(respuesta.status){
-                $("#acceso-usuario").html(respuesta.acceso);
-                setTimeout(function () {
-                    window.location.href = rutaRaiz + "Vistas";
-                }, 1000);
-               }
-             }
+                if (!response.error) {
+                    let respuesta = JSON.parse(response);
+                    if (respuesta.status) {
+                        $("#acceso-usuario").html(respuesta.acceso);
+                        setTimeout(function () {
+                            window.location.href = rutaRaiz + "Vistas";
+                        }, 1000);
+                    }else{
+                        VanillaToasts.create({
+                            title: respuesta.title,
+                            text: respuesta.text,
+                            type: respuesta.type, 
+                            icon: respuesta.icon, 
+                            timeout: respuesta.timeout, 
+                        });
+                    }
+                }
             }
         });
     });

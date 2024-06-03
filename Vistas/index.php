@@ -1,4 +1,7 @@
+<?php
+include "../Config/Global.php";
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,8 +50,12 @@
             </a>
 
             <ul class="dropdown-menu">
-               <li><a class="dropdown-item" href="Login.php">Iniciar Sesion</a></li>
-               <li><a class="dropdown-item" href="#">Registro</a></li>
+               <?php if(!empty($_SESSION['IdUsuario'])):?>
+               <li><a class="dropdown-item" href="<?=$rutaRaiz?>PHP/usuarios/logout.php">Cerrar Sesión</a></li>
+               <?php else: ?>
+               <li><a class="dropdown-item" href="Login/Login.php">Iniciar Sesion</a></li>
+               <li><a class="dropdown-item" href="Registro/Registro.php">Registro</a></li>
+               <?php endif; ?>
             </ul>
 
          </div>
@@ -78,6 +85,15 @@
                   <li class="nav-item">
                      <a class="nav-link active" aria-current="page" href="Login.php">Carrito</a>
                   </li>
+                  <?php
+                  if (isset($_SESSION['IdUsuario'])) { ?>
+
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Login.php">Carrito2</a>
+                     </li>
+                  <?php
+                  }
+                  ?>
                </ul>
                <form class="d-flex" role="search">
                   <input class="form-control me-2 " type="search" placeholder="Buscar" aria-label="Search">
@@ -275,6 +291,8 @@
    <!--Scrips Bootstrap-->
    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+   <script src="../JS/jquery.js"></script>
+
 </body>
 
 </html>

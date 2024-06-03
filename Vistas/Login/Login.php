@@ -1,6 +1,6 @@
 <?php
 include "../../Config/Global.php";
-session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,7 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= $rutaRaiz ?>/Estilos/stylesLogin.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
+    <link rel="stylesheet" href="<?= $rutaRaiz ?>/plugins/toasts/vanillatoasts.css">
     <!--Estilos Google Fonst-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,6 +57,7 @@ session_start();
     <!--Link Js-->
     <script src="<?= $rutaRaiz ?>/JS/jquery.js"></script>
     <script src="<?= $rutaRaiz ?>/JS/Usuarios/Login.js"></script>
+    <script src="<?= $rutaRaiz ?>/plugins/toasts/vanillatoasts.js""></script>
 </body>
 
 </html>

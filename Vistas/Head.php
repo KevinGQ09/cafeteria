@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../Estilos/StylesHead.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-
+    <link rel="stylesheet" href="<?= $rutaRaiz ?>/plugins/toasts/vanillatoasts.css">
     <!--Estilos Google Fonst-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,8 +44,14 @@
                 </a>
 
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="<?= $rutaRaiz ?>Vistas/Login/Login.php">Iniciar Sesion</a></li>
-                    <li><a class="dropdown-item" href="<?= $rutaRaiz ?>Vistas/Registro/Registro.php">Registro</a></li>
+                    <?php if (!empty($_SESSION['IdUsuario'])) : ?>
+
+                        <li><a class="dropdown-item sessionEnd" href="">Cerrar Sesión</a></li>
+
+                    <?php else : ?>
+                        <li><a class="dropdown-item" href="<?= $rutaRaiz ?>Vistas/Login/Login.php">Iniciar Sesión</a></li>
+                        <li><a class="dropdown-item" href="<?= $rutaRaiz ?>Vistas/Registro/Registro.php">Registro</a></li>
+                    <?php endif; ?>
                 </ul>
 
             </div>
@@ -69,8 +78,13 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="Productos.php">Productos</a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="Login.php">Carrito</a>
+                            <?php if (empty($_SESSION['IdUsuario'])) : ?>
+                                <a class="nav-link active" href="Login/Login.php">Carrito(0)</a>
+                            <?php else : ?>
+                                <a class="nav-link active" href="#" data-bs-toggle="modal" data-bs-target="#carritoModal" id="carrito">Carrito(0)</a>
+                            <?php endif; ?>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
@@ -81,6 +95,14 @@
             </div>
         </nav>
     </header>
+
+
+    <?php
+    include("Modales/ModalCarrito.php");
+    ?>
+    <script src="../JS/jquery.js"></script>
+    <script src="<?= $rutaRaiz ?>/JS/usuarios/Logout.js"></script>
+    <script src="<?= $rutaRaiz ?>/plugins/toasts/vanillatoasts.js""></script>
 </body>
 
 </html>

@@ -47,7 +47,7 @@ p {
     text-align: center;
 }
 
-img {
+.img-producto {
 
     height: 225px !important;
 }
@@ -96,9 +96,6 @@ img {
 .paginas .page-item.active .page-link {
     background-color: #b38557; /* Color de fondo */
     border-color: #b38557; /* Color del borde */
-}
-a{
-  
 }
 
 @media only screen and (max-width: 600px) {

@@ -9,7 +9,7 @@ $(document).ready(function () {
     //Inicializacion de funciones
     agregarProductos(IdCategoria);
     manejarActivacionPaginas(IdCategoria)
-   
+
     function agregarProductos(idcategoria) {
         $.ajax({
             type: "GET",
@@ -21,13 +21,22 @@ $(document).ready(function () {
                     productos.forEach(element => {
                         if (element['Id_Categoria'] == idcategoria) {
                             datos += `
-                    <div class="col-12 col-md-3 mb-3">
-                    <div class="card card-secundario">
-                        <img src="${element['Imagen_Producto']}" class="card-img-top">
+                              <div class="col-12 col-md-3 mb-3">
+                              <div class="card card-secundario">
+
+                        <img src="${element['Imagen_Producto']}" class="card-img-top img-producto">
                         <div class="card-body card-tercero">
                             <h5 class="card-title">${element['Nombre_producto']}</h5>
                             <p>$ ${element['Precio']}</p>
-                            <a href="#" class="btn">Comprar</a>
+                            <div class = "valores">
+                                <input type="hidden" value = "${element['IdProducto']}">
+                                <input type="hidden" value = "${element['Nombre_producto']}">
+                                <input type="hidden" value = "${element['Precio']}">
+                                <input type="hidden" value = "${element['Imagen_Producto']}">
+                            </div>                           
+                            <a href="#" class="btn btnComprar" id="btnComprar">Comprar</a>
+                            
+                            
                         </div>
                     </div>
                 </div>`;
@@ -44,7 +53,7 @@ $(document).ready(function () {
         $("#pag" + numero).addClass("active");
     }
 
-    
+
     function actualizarURL(numeroURL) {
         const url = new URL(window.location.href);
         url.searchParams.set('IdCategoria', numeroURL);
@@ -58,5 +67,9 @@ $(document).ready(function () {
         manejarActivacionPaginas(numero);
         agregarProductos(numero);
         actualizarURL(numero)
-     });
+    });
+
+
+ 
+
 });
